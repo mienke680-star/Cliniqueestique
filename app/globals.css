@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #fff;
+  color: #2b2f36;
+}
+
+::selection {
+  background-color: #a3bdb9;
+  color: #2b2f36;
+}
+
+.fine-rule {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #d9d9d9 20%, #d9d9d9 80%, transparent);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.container-x {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .container-x {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: #444a54;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* Focus visibility for keyboard nav — meets WCAG AA */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #677877;
+  outline-offset: 2px;
+}
+
+/* Cursor-responsive light, desktop only, capability-gated in JS via .can-hover */
+.cursor-light {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background: radial-gradient(
+    280px circle at var(--x, 50%) var(--y, 50%),
+    rgba(163, 189, 185, 0.16),
+    transparent 70%
+  );
+}
+
+.can-hover .cursor-light {
+  opacity: 1;
+}
+
+.serum-drop {
+  filter: drop-shadow(0 6px 10px rgba(68, 74, 84, 0.15));
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #d9d9d9;
+  border-radius: 999px;
+}
