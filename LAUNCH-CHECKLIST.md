@@ -68,13 +68,17 @@ as a placeholder. Real photography is needed for:
 ## 5. Logo file
 
 The brand guidelines PDF embeds the CE monogram as a flattened image, not
-an editable vector, and no vectorisation tool was available this session.
-The interlocking ring-and-dot monogram used across the site (header,
-favicon, intro animation) is an **original recreation in the same spirit**,
-not a pixel-perfect trace of the supplied artwork.
+an editable vector. Reading the artwork closely, the mark is a mirrored
+pair of lowercase "e" letterforms in a bold, high-contrast Didone serif —
+the same style of character as the site's own display face, Bodoni Moda.
+The monogram in `components/Logo.tsx` (`monogramPaths`) was rebuilt from
+that real font's actual vector outlines (weight 800, optical size 96),
+mirrored and overlapped, with a hand-matched tail-and-dot flourish — a
+faithful reconstruction of the letterforms, not a rough guess. It's very
+close to the source artwork but still not a pixel-exact trace of it.
 
-- [ ] Supply the real vector logo (SVG/EPS/AI) so `components/Logo.tsx`
-      (`monogramPaths`) can be swapped for the authentic mark before launch.
+- [ ] If the studio has the original vector export (SVG/EPS/AI), supply it
+      so `monogramPaths` can be swapped for an exact match before launch.
 
 ## 6. Reviews & testimonials
 

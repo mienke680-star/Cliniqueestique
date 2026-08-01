@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { monogramPaths } from "./Logo";
+import { monogramPaths, monogramViewBox } from "./Logo";
 
 const EASE = [0.16, 0.8, 0.3, 1] as const;
 const AUTO_ADVANCE_MS = 4200;
@@ -97,60 +97,72 @@ export function IntroAnimation({ onDone }: { onDone: () => void }) {
       </button>
 
       <div className="relative flex flex-col items-center">
-        <svg viewBox="0 0 240 200" className="h-28 w-auto md:h-36" aria-hidden="true">
-          {/* stroke draw-on pass */}
+        <svg viewBox={monogramViewBox} className="h-24 w-auto md:h-32" aria-hidden="true">
+          {/* stroke draw-on pass: an invisible pen traces each letterform's
+              outer contour and inner counter in one continuous stroke */}
           <motion.path
-            d={monogramPaths.leftRing}
+            d={monogramPaths.rightGlyph}
             fill="none"
             stroke="#444A54"
-            strokeWidth={3}
+            strokeWidth={1.6}
             initial={{ pathLength: 0, opacity: 1 }}
             animate={{ pathLength: 1 }}
-            transition={{ duration: 1.1, ease: EASE, delay: 0.15 }}
+            transition={{ duration: 1.3, ease: EASE, delay: 0.15 }}
           />
           <motion.path
-            d={monogramPaths.rightRing}
+            d={monogramPaths.leftGlyph}
             fill="none"
             stroke="#444A54"
-            strokeWidth={3}
+            strokeWidth={1.6}
             initial={{ pathLength: 0, opacity: 1 }}
             animate={{ pathLength: 1 }}
-            transition={{ duration: 1.1, ease: EASE, delay: 0.55 }}
+            transition={{ duration: 1.3, ease: EASE, delay: 0.55 }}
           />
           <motion.path
-            d={monogramPaths.innerAccent}
+            d={monogramPaths.rightTail}
             fill="none"
             stroke="#677877"
             strokeWidth={1.4}
             strokeLinecap="round"
             initial={{ pathLength: 0, opacity: 0 }}
             animate={{ pathLength: 1, opacity: 1 }}
-            transition={{ duration: 0.6, ease: EASE, delay: 1.2 }}
+            transition={{ duration: 0.5, ease: EASE, delay: 1.35 }}
           />
-          <motion.circle
-            {...monogramPaths.dotLeft}
-            fill="#444A54"
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.35, delay: 1.5 }}
-            style={{ transformOrigin: `${monogramPaths.dotLeft.cx}px ${monogramPaths.dotLeft.cy}px` }}
+          <motion.path
+            d={monogramPaths.leftTail}
+            fill="none"
+            stroke="#677877"
+            strokeWidth={1.4}
+            strokeLinecap="round"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ pathLength: 1, opacity: 1 }}
+            transition={{ duration: 0.5, ease: EASE, delay: 1.5 }}
           />
           <motion.circle
             {...monogramPaths.dotRight}
             fill="#444A54"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.35, delay: 1.6 }}
+            transition={{ duration: 0.35, delay: 1.75 }}
             style={{ transformOrigin: `${monogramPaths.dotRight.cx}px ${monogramPaths.dotRight.cy}px` }}
+          />
+          <motion.circle
+            {...monogramPaths.dotLeft}
+            fill="#444A54"
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.35, delay: 1.85 }}
+            style={{ transformOrigin: `${monogramPaths.dotLeft.cx}px ${monogramPaths.dotLeft.cy}px` }}
           />
 
           {/* gentle fill-in charcoal pass */}
-          <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 1.85 }}>
-            <path d={monogramPaths.leftRing} fill="none" stroke="#444A54" strokeWidth={18} />
-            <path d={monogramPaths.rightRing} fill="none" stroke="#444A54" strokeWidth={18} />
-            <path d={monogramPaths.innerAccent} fill="none" stroke="#F3F6F5" strokeWidth={1.6} strokeLinecap="round" />
-            <circle {...monogramPaths.dotLeft} fill="#444A54" />
+          <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.55, delay: 2.05 }}>
+            <path d={monogramPaths.rightGlyph} fill="#444A54" />
+            <path d={monogramPaths.leftGlyph} fill="#444A54" />
+            <path d={monogramPaths.rightTail} fill="none" stroke="#444A54" strokeWidth={2} strokeLinecap="round" />
+            <path d={monogramPaths.leftTail} fill="none" stroke="#444A54" strokeWidth={2} strokeLinecap="round" />
             <circle {...monogramPaths.dotRight} fill="#444A54" />
+            <circle {...monogramPaths.dotLeft} fill="#444A54" />
           </motion.g>
         </svg>
 
@@ -211,11 +223,13 @@ export function ReducedMotionIntro({ onDone }: { onDone: () => void }) {
       >
         Skip intro
       </button>
-      <svg viewBox="0 0 240 200" className="h-24 w-auto">
-        <path d={monogramPaths.leftRing} fill="none" stroke="#444A54" strokeWidth={18} />
-        <path d={monogramPaths.rightRing} fill="none" stroke="#444A54" strokeWidth={18} />
-        <circle {...monogramPaths.dotLeft} fill="#444A54" />
+      <svg viewBox={monogramViewBox} className="h-20 w-auto">
+        <path d={monogramPaths.rightGlyph} fill="#444A54" />
+        <path d={monogramPaths.leftGlyph} fill="#444A54" />
+        <path d={monogramPaths.rightTail} fill="none" stroke="#444A54" strokeWidth={2} strokeLinecap="round" />
+        <path d={monogramPaths.leftTail} fill="none" stroke="#444A54" strokeWidth={2} strokeLinecap="round" />
         <circle {...monogramPaths.dotRight} fill="#444A54" />
+        <circle {...monogramPaths.dotLeft} fill="#444A54" />
       </svg>
       <p className="mt-4 font-display text-2xl text-charcoal">Clinique Estique</p>
       <p className="mt-1 font-label text-xs uppercase tracking-widest2 text-sage-deep">
