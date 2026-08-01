@@ -1,11 +1,16 @@
 import { ImageResponse } from "next/og";
-import { monogramPaths, monogramViewBox } from "@/components/Logo";
+import fs from "node:fs";
+import path from "node:path";
 
+export const runtime = "nodejs";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const alt = "Clinique Estique — Specialised Beauty Clinic in Middelburg, Mpumalanga";
 
 export default function OgImage() {
+  const file = fs.readFileSync(path.join(process.cwd(), "public/brand/ce-monogram.png"));
+  const dataUri = `data:image/png;base64,${file.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -19,14 +24,8 @@ export default function OgImage() {
           background: "linear-gradient(135deg, #FFFFFF 0%, #E9EBEB 60%, #A3BDB9 140%)",
         }}
       >
-        <svg width="140" height="107" viewBox={monogramViewBox}>
-          <path d={monogramPaths.rightGlyph} fill="#444A54" />
-          <path d={monogramPaths.leftGlyph} fill="#444A54" />
-          <path d={monogramPaths.rightTail} fill="none" stroke="#444A54" strokeWidth={3} strokeLinecap="round" />
-          <path d={monogramPaths.leftTail} fill="none" stroke="#444A54" strokeWidth={3} strokeLinecap="round" />
-          <circle {...monogramPaths.dotRight} fill="#444A54" />
-          <circle {...monogramPaths.dotLeft} fill="#444A54" />
-        </svg>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={dataUri} width={168} height={100} alt="" />
         <div style={{ marginTop: 28, fontSize: 56, color: "#444A54", fontWeight: 600 }}>
           Clinique Estique
         </div>

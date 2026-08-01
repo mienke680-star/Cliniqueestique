@@ -1,10 +1,15 @@
 import { ImageResponse } from "next/og";
-import { monogramPaths, monogramViewBox } from "@/components/Logo";
+import fs from "node:fs";
+import path from "node:path";
 
+export const runtime = "nodejs";
 export const size = { width: 64, height: 64 };
 export const contentType = "image/png";
 
 export default function Icon() {
+  const file = fs.readFileSync(path.join(process.cwd(), "public/brand/ce-monogram.png"));
+  const dataUri = `data:image/png;base64,${file.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -17,14 +22,8 @@ export default function Icon() {
           background: "#FFFFFF",
         }}
       >
-        <svg width="58" height="46" viewBox={monogramViewBox}>
-          <path d={monogramPaths.rightGlyph} fill="#444A54" />
-          <path d={monogramPaths.leftGlyph} fill="#444A54" />
-          <path d={monogramPaths.rightTail} fill="none" stroke="#444A54" strokeWidth={3} strokeLinecap="round" />
-          <path d={monogramPaths.leftTail} fill="none" stroke="#444A54" strokeWidth={3} strokeLinecap="round" />
-          <circle {...monogramPaths.dotRight} fill="#444A54" />
-          <circle {...monogramPaths.dotLeft} fill="#444A54" />
-        </svg>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={dataUri} width={56} height={33} alt="" />
       </div>
     ),
     { ...size }

@@ -65,20 +65,17 @@ as a placeholder. Real photography is needed for:
       empty, with a note, rather than faked)
 - [ ] Salon interior shots for About/homepage
 
-## 5. Logo file
+## 5. Logo file — resolved
 
-The brand guidelines PDF embeds the CE monogram as a flattened image, not
-an editable vector. Reading the artwork closely, the mark is a mirrored
-pair of lowercase "e" letterforms in a bold, high-contrast Didone serif —
-the same style of character as the site's own display face, Bodoni Moda.
-The monogram in `components/Logo.tsx` (`monogramPaths`) was rebuilt from
-that real font's actual vector outlines (weight 800, optical size 96),
-mirrored and overlapped, with a hand-matched tail-and-dot flourish — a
-faithful reconstruction of the letterforms, not a rough guess. It's very
-close to the source artwork but still not a pixel-exact trace of it.
+The owner supplied the real monogram as an image (`IMG_9271.jpeg`). It's
+now used directly across the site (`public/brand/ce-monogram.png`) — the
+only processing applied was cropping to the artwork's own edges and making
+the background transparent; no pixel of the mark itself was redrawn or
+recoloured. This replaced an earlier reconstructed placeholder.
 
-- [ ] If the studio has the original vector export (SVG/EPS/AI), supply it
-      so `monogramPaths` can be swapped for an exact match before launch.
+- [ ] If a true vector export (SVG/EPS/AI) exists, it can replace the
+      raster PNG for crisper scaling at very large sizes, but is not
+      required — the current asset is the authentic mark.
 
 ## 6. Reviews & testimonials
 
