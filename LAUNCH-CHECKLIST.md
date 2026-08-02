@@ -39,7 +39,7 @@ which spelling is intentional:
 
 ## 3. Team roster
 
-Names and roles (Yvette Botha, Lorraine, Katia, Hesri, Erin, Beauty) come
+Names and roles (Yvette Botha, Lorraine, Christie, Hesri, Erin, Beauty) come
 from the project brief's existing-site listing. **These could not be
 cross-checked against a live Instagram or website this session** (both were
 unreachable). Please confirm:

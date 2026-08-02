@@ -24,9 +24,9 @@ export const team: TeamMember[] = [
     unverified: true,
   },
   {
-    name: "Katia",
+    name: "Christie",
     role: "Nail Art",
-    bio: "Katia brings a fine, considered hand to nail art and gel finishes.",
+    bio: "Christie brings a fine, considered hand to nail art and gel finishes.",
     unverified: true,
   },
   {
