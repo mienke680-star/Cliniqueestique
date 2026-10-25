@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Reveal } from "@/components/Reveal";
-import { SignatureVisual } from "@/components/SignatureVisual";
+import { TreatmentPhoto } from "@/components/TreatmentPhoto";
 import { MesibonExplorer } from "@/components/MesibonExplorer";
 import { mesibonWhyChoose } from "@/data/mesibon-products";
 import { whatsappLink } from "@/data/business";
@@ -39,7 +39,7 @@ export default function MesiBonPage() {
           </div>
         </Reveal>
         <Reveal delay={0.15}>
-          <SignatureVisual type="oils" className="w-full" />
+          <TreatmentPhoto slug="me-si-bon" fallback="oils" className="w-full" sizes="(min-width: 1024px) 40vw, 90vw" priority />
         </Reveal>
       </section>
 

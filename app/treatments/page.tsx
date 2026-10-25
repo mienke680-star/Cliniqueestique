@@ -89,7 +89,7 @@ export default function TreatmentsPage() {
 
         <Reveal delay={0.25}>
           <div className="flex h-full flex-col overflow-hidden rounded-md border border-grey/60 bg-white">
-            <SignatureVisual type="oils" className="w-full" />
+            <TreatmentPhoto slug="me-si-bon" fallback="oils" className="w-full" sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw" />
             <div className="flex flex-1 flex-col p-6">
               <h2 className="font-display text-xl text-charcoal">Me Si Bon Essential Oils</h2>
               <p className="mt-2 font-body text-sm text-charcoal/65">

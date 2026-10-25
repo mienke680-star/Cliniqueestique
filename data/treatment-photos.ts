@@ -7,6 +7,10 @@ import nails from "@/public/images/treatments/nails.jpg";
 import pmu from "@/public/images/treatments/permanent-makeup.jpg";
 import massage from "@/public/images/treatments/massage-therapy.jpg";
 import hairMakeup from "@/public/images/treatments/hair-and-makeup.jpg";
+import grooming from "@/public/images/treatments/grooming-and-tinting.jpg";
+import handsFeet from "@/public/images/treatments/hands-and-feet.jpg";
+import plasma from "@/public/images/treatments/plasma-plex.jpg";
+import meSiBon from "@/public/images/treatments/me-si-bon.jpg";
 
 export type TreatmentPhoto = {
   src: StaticImageData;
@@ -60,5 +64,26 @@ export const treatmentPhotos: Record<string, TreatmentPhoto> = {
     src: hairMakeup,
     alt: "Makeup brush held over a client's eye, showing a finished makeup look",
     position: "50% 50%",
+  },
+  "grooming-and-tinting": {
+    src: grooming,
+    alt: "Brow tint being applied with a fine brush while a client relaxes on a treatment bed",
+    position: "50% 45%",
+  },
+  "hands-and-feet": {
+    src: handsFeet,
+    alt: "Therapist massaging a client's foot resting on a folded towel",
+    position: "50% 50%",
+  },
+  "plasma-plex": {
+    src: plasma,
+    alt: "Plasma pen treatment beside a client's eye, held in black-gloved hands",
+    position: "56% 50%",
+  },
+  // Product photo, used on the Me Si Bon card and page
+  "me-si-bon": {
+    src: meSiBon,
+    alt: "Me Si Bon essential oil bottles stacked against a sage backdrop with water droplets",
+    position: "50% 60%",
   },
 };
