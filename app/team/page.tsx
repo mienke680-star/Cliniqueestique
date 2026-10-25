@@ -14,9 +14,9 @@ export const metadata: Metadata = {
 };
 
 export default function TeamPage() {
-  const [founder, ...rest] = team;
-  const pictured = rest.filter((m) => teamPortraits[m.name]);
-  const others = rest.filter((m) => !teamPortraits[m.name]);
+  // Founder first, then the team, all at the same card size
+  const pictured = team.filter((m) => teamPortraits[m.name]);
+  const others = team.filter((m) => !teamPortraits[m.name]);
 
   return (
     <div className="pb-24 md:pb-32">
@@ -51,51 +51,18 @@ export default function TeamPage() {
         </Reveal>
       </section>
 
-      {/* Founder feature */}
-      {founder && (
-        <section className="container-x mt-20 grid items-center gap-10 md:mt-28 md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] md:gap-16 lg:gap-24">
-          <Reveal>
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-md bg-charcoal md:max-w-none">
-              {teamPortraits[founder.name] && (
-                <Image
-                  src={teamPortraits[founder.name]}
-                  alt={`Portrait of ${founder.name}, ${founder.role}`}
-                  fill
-                  placeholder="blur"
-                  sizes="(min-width: 768px) 42vw, 90vw"
-                  className="object-cover"
-                  style={{ transform: "scale(1.15)", transformOrigin: teamPortraitFocus[founder.name] }}
-                />
-              )}
-            </div>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <div className="max-w-xl">
-              <p className="font-label text-sm uppercase tracking-widest2 text-sage-deep">
-                {founder.role}
-              </p>
-              <h2 className="mt-3 font-display text-4xl leading-tight text-charcoal md:text-5xl">
-                {founder.name}
-              </h2>
-              <span aria-hidden className="mt-7 block h-px w-16 bg-seafoam" />
-              <p className="mt-7 font-body text-lg leading-relaxed text-charcoal/80">{founder.bio}</p>
-            </div>
-          </Reveal>
-        </section>
-      )}
-
-      {/* Team: 4 across on desktop, 2 on tablet, portrait-beside-text rows on phones */}
-      <section className="container-x mt-24 md:mt-32">
+      {/* Team: 5 across on wide screens, 3 on laptops, 2 on tablets, portrait-beside-text rows on phones */}
+      <section className="container-x mt-20 md:mt-28">
         <Reveal>
           <h2 className="font-display text-3xl leading-tight text-charcoal md:text-4xl">
             Meet the team
           </h2>
         </Reveal>
 
-        <ul className="mt-10 grid gap-8 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-14 lg:grid-cols-4 lg:gap-x-8">
+        <ul className="mt-10 grid gap-8 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-14 lg:grid-cols-3 lg:gap-x-8 xl:grid-cols-5 xl:gap-x-6">
           {pictured.map((member, i) => (
             <li key={member.name}>
-              <Reveal delay={(i % 4) * 0.07}>
+              <Reveal delay={(i % 5) * 0.07}>
                 <article className="grid grid-cols-[38%_1fr] items-start gap-5 sm:block">
                   <div className="relative aspect-[4/5] w-full overflow-hidden rounded-md bg-charcoal">
                     <Image
@@ -103,7 +70,7 @@ export default function TeamPage() {
                       alt={`Portrait of ${member.name}, ${member.role}`}
                       fill
                       placeholder="blur"
-                      sizes="(min-width: 1024px) 26vw, (min-width: 640px) 50vw, 45vw"
+                      sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 30vw, (min-width: 640px) 50vw, 45vw"
                       className="object-cover"
                       style={{ transform: "scale(1.35)", transformOrigin: teamPortraitFocus[member.name] }}
                     />
