@@ -107,6 +107,30 @@ export default function TreatmentsPage() {
             </div>
           </div>
         </Reveal>
+
+        {/* Copy limited to what the packaging states; awaiting owner wording */}
+        <Reveal delay={0.3}>
+          <div className="flex h-full flex-col overflow-hidden rounded-md border border-grey/60 bg-white">
+            <TreatmentPhoto slug="ntrymed" fallback="oils" className="w-full" sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw" />
+            <div className="flex flex-1 flex-col p-6">
+              <h2 className="font-display text-xl text-charcoal">NTRYMED</h2>
+              <p className="mt-2 font-body text-sm text-charcoal/65">
+                Including NTRYMED Mela Bright Cream for pigmentation correction. Ask our
+                therapists whether it suits your skin.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 border-t border-grey/60 pt-4 text-xs">
+                <a
+                  href={whatsappLink("Hi Clinique Estique, I'd like to enquire about NTRYMED products.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 font-label uppercase tracking-wide text-charcoal underline underline-offset-4 hover:text-sage-deep"
+                >
+                  <IconChat className="h-3.5 w-3.5" /> Enquire
+                </a>
+              </div>
+            </div>
+          </div>
+        </Reveal>
       </section>
     </div>
   );

@@ -11,6 +11,7 @@ import grooming from "@/public/images/treatments/grooming-and-tinting.jpg";
 import handsFeet from "@/public/images/treatments/hands-and-feet.jpg";
 import plasma from "@/public/images/treatments/plasma-plex.jpg";
 import meSiBon from "@/public/images/treatments/me-si-bon.jpg";
+import ntrymed from "@/public/images/treatments/ntrymed.jpg";
 
 export type TreatmentPhoto = {
   src: StaticImageData;
@@ -85,5 +86,11 @@ export const treatmentPhotos: Record<string, TreatmentPhoto> = {
     src: meSiBon,
     alt: "Me Si Bon essential oil bottles stacked against a sage backdrop with water droplets",
     position: "50% 60%",
+  },
+  // Product photo, used on the NTRYMED card
+  ntrymed: {
+    src: ntrymed,
+    alt: "NTRYMED Mela Bright Cream tube and box held up in two hands",
+    position: "50% 45%",
   },
 };

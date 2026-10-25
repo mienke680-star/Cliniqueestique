@@ -58,6 +58,9 @@ Supplied and in use, unaltered:
 
 Still needed (these cards show the brand illustration until then):
 - [ ] Lamelle Skincare product imagery
+- [ ] NTRYMED card (treatments page): copy only restates the packaging
+      ("Mela Bright Cream, pigmentation correction"); supply preferred wording,
+      the product range stocked, and prices if they should be shown
 - [ ] Team portraits (team page still uses initials placeholders)
 - [ ] Before-and-after photos (Results page intentionally left without them)
 - [ ] Salon interior shots for About/homepage
