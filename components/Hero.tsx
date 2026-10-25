@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import { whatsappLink } from "@/data/business";
+import { IconArrowRight } from "./icons";
 import teamPhoto from "@/public/images/clinique-estique-team.jpg";
 
 // Hero-only typefaces: scoped to this component so the rest of the site keeps
@@ -70,9 +71,9 @@ export function Hero() {
             className="ce-hero__cta"
           >
             <span>Book your appointment</span>
-            <svg aria-hidden viewBox="0 0 24 24" className="ce-hero__cta-arrow">
-              <path d="M4 12h15m-5-5 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
+            <span aria-hidden className="ce-hero__cta-arrow">
+              <IconArrowRight className="h-full w-full" />
+            </span>
             <span className="sr-only">(opens WhatsApp in a new tab)</span>
           </a>
         </div>
@@ -81,7 +82,7 @@ export function Hero() {
       <div className="ce-hero__photo">
         <Image
           src={teamPhoto}
-          alt="The Clinique Estique team — five therapists dressed in black, smiling together"
+          alt="The Clinique Estique team: five therapists dressed in black, smiling together"
           fill
           priority
           quality={90}
