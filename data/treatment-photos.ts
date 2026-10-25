@@ -12,6 +12,7 @@ import handsFeet from "@/public/images/treatments/hands-and-feet.jpg";
 import plasma from "@/public/images/treatments/plasma-plex.jpg";
 import meSiBon from "@/public/images/treatments/me-si-bon.jpg";
 import ntrymed from "@/public/images/treatments/ntrymed.jpg";
+import lamelle from "@/public/images/treatments/lamelle.jpg";
 
 export type TreatmentPhoto = {
   src: StaticImageData;
@@ -92,5 +93,11 @@ export const treatmentPhotos: Record<string, TreatmentPhoto> = {
     src: ntrymed,
     alt: "NTRYMED Mela Bright Cream tube and box held up in two hands",
     position: "50% 45%",
+  },
+  // Product photo, used on the Lamelle Skincare card
+  lamelle: {
+    src: lamelle,
+    alt: "Lamelle Dermaheal Ultra Renewal Cream box held up in two hands",
+    position: "50% 50%",
   },
 };

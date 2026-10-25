@@ -54,10 +54,10 @@ Supplied and in use, unaltered:
 - [x] Team photograph (homepage hero, `public/images/clinique-estique-team-studio.jpg`)
 - [x] Treatment photos for Facials, Microneedling, Waxing, IPL, Gel Nails,
       Permanent Makeup, Massage, Hair & Makeup, Grooming & Tinting, Hands & Feet,
-      Plasma Plex, and Me Si Bon essential oils (`public/images/treatments/`).
+      Plasma Plex, Me Si Bon essential oils, NTRYMED and Lamelle
+      (`public/images/treatments/`).
 
 Still needed (these cards show the brand illustration until then):
-- [ ] Lamelle Skincare product imagery
 - [ ] NTRYMED card (treatments page): copy only restates the packaging
       ("Mela Bright Cream, pigmentation correction"); supply preferred wording,
       the product range stocked, and prices if they should be shown
