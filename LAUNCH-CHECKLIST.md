@@ -61,7 +61,9 @@ Still needed (these cards show the brand illustration until then):
 - [ ] NTRYMED card (treatments page): copy only restates the packaging
       ("Mela Bright Cream, pigmentation correction"); supply preferred wording,
       the product range stocked, and prices if they should be shown
-- [ ] Team portraits (team page still uses initials placeholders)
+- [x] Team portraits (Yvette, Lorraine, Christie, Hesri, Erin) and team group photo
+- [ ] Confirm each team member's role wording, and whether "Beauty (Salon Support)"
+      is still on the team (no portrait was supplied, so she is listed in text only)
 - [ ] Before-and-after photos (Results page intentionally left without them)
 - [ ] Salon interior shots for About/homepage
 
