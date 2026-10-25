@@ -1,64 +1,41 @@
-// Brand mark for Clinique Estique.
-//
-// This is the authentic CE monogram exactly as supplied by the owner
-// (public/brand/ce-monogram.png), not a redrawn or approximated version.
-// The only processing applied was a whitespace crop to the artwork's own
-// bounding box and converting the background to transparent — no pixel of
-// the mark itself was altered, recoloured, or redrawn. Do not replace this
-// with a recreated/vector version.
+// Official Clinique Estique logo artwork (Wildchild Design), taken directly
+// from the supplied CE_LOGO.pdf as vector paths. Nothing is redrawn or
+// retyped: the only processing was removing each page's background and
+// trimming the canvas to the artwork. Colour follows `currentColor`, so the
+// same file serves the light-ground (charcoal) and dark-ground (white)
+// versions shown in the brand document.
 
-const MONOGRAM_SRC = "/brand/ce-monogram.png";
-const MONOGRAM_ASPECT = 560 / 333;
+const variants = {
+  monogram: { src: "/brand/logo/ce-monogram.svg", aspect: 216.08 / 129.85 },
+  wordmark: { src: "/brand/logo/ce-wordmark.svg", aspect: 465.51 / 62.59 },
+  horizontal: { src: "/brand/logo/ce-logo-horizontal.svg", aspect: 523.48 / 170.99 },
+  stacked: { src: "/brand/logo/ce-logo-stacked.svg", aspect: 389.82 / 228.91 },
+  full: { src: "/brand/logo/ce-logo-full.svg", aspect: 605.16 / 322.78 },
+} as const;
 
-export function LogoMark({
+export type LogoVariant = keyof typeof variants;
+
+export function BrandLogo({
+  variant,
   className,
+  label = "Clinique Estique",
 }: {
+  variant: LogoVariant;
   className?: string;
-  fill?: string;
+  label?: string;
 }) {
+  const { src, aspect } = variants[variant];
+  const mask = `url(${src}) center / contain no-repeat`;
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={MONOGRAM_SRC}
-      alt="Clinique Estique monogram"
-      className={className}
-      style={{ aspectRatio: MONOGRAM_ASPECT, objectFit: "contain" }}
+    <span
+      role="img"
+      aria-label={label}
+      className={`inline-block bg-current ${className ?? ""}`}
+      style={{ aspectRatio: aspect, WebkitMask: mask, mask }}
     />
   );
 }
 
-export function LogoLockup({
-  className,
-  markClassName = "h-14 w-auto",
-  tagline = true,
-}: {
-  className?: string;
-  markClassName?: string;
-  tagline?: boolean;
-}) {
-  return (
-    <div className={className}>
-      <LogoMark className={markClassName} />
-      <div className="mt-2 text-center">
-        <p className="font-display text-2xl tracking-wide text-charcoal md:text-3xl">
-          Clinique Estique
-        </p>
-        {tagline && (
-          <p className="mt-1 font-label text-[11px] uppercase tracking-widest2 text-sage-deep">
-            Specialised Beauty Clinic
-          </p>
-        )}
-      </div>
-    </div>
-  );
-}
-
-export function LogoWordmark({ className }: { className?: string }) {
-  return (
-    <span className={className}>
-      <span className="font-display text-xl tracking-wide text-charcoal md:text-2xl">
-        Clinique Estique
-      </span>
-    </span>
-  );
+export function LogoMark({ className }: { className?: string }) {
+  return <BrandLogo variant="monogram" className={className} label="Clinique Estique monogram" />;
 }

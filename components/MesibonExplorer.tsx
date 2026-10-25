@@ -35,14 +35,14 @@ export function MesibonExplorer() {
             href={mesibonSource.publicPath}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full border border-charcoal px-5 py-2.5 font-label text-xs uppercase tracking-widest2 text-charcoal hover:bg-charcoal hover:text-white"
+            className="rounded-full border border-charcoal/45 px-5 py-2.5 font-label text-xs uppercase tracking-widest2 text-charcoal transition hover:border-charcoal hover:bg-charcoal hover:text-white"
           >
             View Me Si Bon 2026 Price List
           </a>
           <a
             href={mesibonSource.publicPath}
             download
-            className="rounded-full border border-charcoal px-5 py-2.5 font-label text-xs uppercase tracking-widest2 text-charcoal hover:bg-charcoal hover:text-white"
+            className="rounded-full border border-charcoal/45 px-5 py-2.5 font-label text-xs uppercase tracking-widest2 text-charcoal transition hover:border-charcoal hover:bg-charcoal hover:text-white"
           >
             Download Me Si Bon 2026 Price List
           </a>
@@ -56,7 +56,7 @@ export function MesibonExplorer() {
               {cat.name}
             </h2>
             <p className="mt-2 font-body text-sm text-charcoal/60">{cat.intro}</p>
-            <div className="mt-5 overflow-x-auto rounded-2xl border border-grey/70">
+            <div className="mt-5 overflow-x-auto rounded-md border border-grey/70">
               <table className="w-full border-collapse text-left">
                 <thead>
                   <tr className="bg-silver/70">

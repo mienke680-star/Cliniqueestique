@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ceTreatmentCategories } from "@/data/ce-treatments";
 import { whatsappLink } from "@/data/business";
 import { SignatureVisual } from "@/components/SignatureVisual";
+import { TreatmentPhoto } from "@/components/TreatmentPhoto";
 import { Reveal } from "@/components/Reveal";
 import { TiltCard } from "@/components/TiltCard";
 import { IconChat } from "@/components/icons";
@@ -35,8 +36,8 @@ export default function TreatmentsPage() {
         {ceTreatmentCategories.map((cat, i) => (
           <Reveal key={cat.slug} delay={(i % 3) * 0.08}>
             <TiltCard className="h-full">
-              <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-grey/60 bg-white">
-                <SignatureVisual type={cat.signature} className="w-full" />
+              <div className="flex h-full flex-col overflow-hidden rounded-md border border-grey/60 bg-white">
+                <TreatmentPhoto slug={cat.slug} fallback={cat.signature} className="w-full" sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw" />
                 <div className="flex flex-1 flex-col p-6">
                   <h2 className="font-display text-xl text-charcoal">{cat.name}</h2>
                   <p className="mt-2 line-clamp-3 font-body text-sm text-charcoal/65">{cat.intro}</p>
@@ -66,7 +67,7 @@ export default function TreatmentsPage() {
         ))}
 
         <Reveal delay={0.2}>
-          <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-grey/60 bg-white">
+          <div className="flex h-full flex-col overflow-hidden rounded-md border border-grey/60 bg-white">
             <SignatureVisual type="oils" className="w-full" />
             <div className="flex flex-1 flex-col p-6">
               <h2 className="font-display text-xl text-charcoal">Lamelle Skincare</h2>
@@ -87,7 +88,7 @@ export default function TreatmentsPage() {
         </Reveal>
 
         <Reveal delay={0.25}>
-          <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-grey/60 bg-white">
+          <div className="flex h-full flex-col overflow-hidden rounded-md border border-grey/60 bg-white">
             <SignatureVisual type="oils" className="w-full" />
             <div className="flex flex-1 flex-col p-6">
               <h2 className="font-display text-xl text-charcoal">Me Si Bon Essential Oils</h2>

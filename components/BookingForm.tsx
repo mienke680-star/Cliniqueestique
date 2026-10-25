@@ -190,7 +190,7 @@ export function BookingForm() {
 
       <button
         type="submit"
-        className="inline-flex items-center gap-2 rounded-full bg-charcoal px-7 py-3.5 font-label text-xs uppercase tracking-widest2 text-white transition hover:bg-sage-deep"
+        className="inline-flex items-center gap-2 rounded-full bg-sage-deep px-7 py-3.5 font-label text-xs uppercase tracking-widest2 text-white transition hover:bg-charcoal"
       >
         <IconChat className="h-4 w-4" />
         Send Enquiry via WhatsApp

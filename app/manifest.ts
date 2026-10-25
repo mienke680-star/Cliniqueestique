@@ -7,7 +7,7 @@ export default function manifest(): MetadataRoute.Manifest {
     description: "Specialised beauty clinic in Middelburg, Mpumalanga.",
     start_url: "/",
     display: "standalone",
-    background_color: "#ffffff",
+    background_color: "#E9EBEB",
     theme_color: "#444A54",
     icons: [],
   };

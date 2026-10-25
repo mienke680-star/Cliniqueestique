@@ -3,10 +3,12 @@ import { Magnetic } from "./MagneticButton";
 
 type Variant = "solid" | "outline" | "ghost";
 
+// Brand button system: primary in deep sage-grey, secondary as a hairline
+// outline, tertiary as an underlined text link.
 const variantClasses: Record<Variant, string> = {
-  solid: "bg-charcoal text-white hover:bg-sage-deep",
-  outline: "border border-charcoal text-charcoal hover:bg-charcoal hover:text-white",
-  ghost: "text-charcoal hover:text-sage-deep underline underline-offset-4",
+  solid: "bg-sage-deep text-white shadow-[0_10px_24px_-14px_rgba(68,74,84,0.55)] hover:bg-charcoal",
+  outline: "border border-charcoal/45 text-charcoal hover:border-charcoal hover:bg-charcoal hover:text-white",
+  ghost: "text-charcoal underline decoration-sage underline-offset-[6px] hover:text-sage-deep hover:decoration-sage-deep",
 };
 
 export function Button({
@@ -24,7 +26,7 @@ export function Button({
   className?: string;
   icon?: React.ReactNode;
 }) {
-  const classes = `inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 font-label text-xs uppercase tracking-widest2 transition ${variantClasses[variant]} ${className}`;
+  const classes = `inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-label text-xs uppercase tracking-widest2 transition duration-300 ease-out active:scale-[0.98] ${variantClasses[variant]} ${className}`;
 
   const content = (
     <>

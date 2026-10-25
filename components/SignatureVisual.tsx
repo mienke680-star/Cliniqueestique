@@ -15,13 +15,12 @@ export type SignatureType =
   | "plasma"
   | "oils";
 
-// A cohesive system of restrained, brand-coloured motion motifs used in
-// place of real clinic photography (none was supplied/reachable this
-// session — see LAUNCH-CHECKLIST.md). Each treatment family gets its own
-// signature interaction rendered in SVG + CSS, no stock imagery.
+// A cohesive system of restrained, brand-coloured motion motifs, shown for
+// treatment families that do not have an owner-supplied photograph yet
+// (see TreatmentPhoto and LAUNCH-CHECKLIST.md). No stock imagery.
 function Frame({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl bg-gradient-to-br from-silver via-white to-sage/15">
+    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-md bg-gradient-to-br from-silver via-white to-sage/15">
       {children}
     </div>
   );
@@ -88,7 +87,7 @@ export function SignatureVisual({ type, className }: { type: SignatureType; clas
         <div className={className}>
           <Frame>
             <motion.div
-              className="absolute inset-x-6 top-1/2 h-16 -translate-y-1/2 rounded-full bg-gradient-to-r from-[#c9a869]/70 via-[#e4c98e]/80 to-[#c9a869]/70"
+              className="absolute inset-x-6 top-1/2 h-16 -translate-y-1/2 rounded-full bg-gradient-to-r from-sage/70 via-sage-pale/90 to-sage/70"
               initial={{ scaleX: 0, opacity: 0.4 }}
               whileInView={{ scaleX: 1, opacity: 0.85 }}
               viewport={{ once: true }}

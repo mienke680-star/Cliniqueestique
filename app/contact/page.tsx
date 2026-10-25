@@ -31,7 +31,7 @@ export default function ContactPage() {
 
       <section className="container-x grid gap-14 lg:grid-cols-[1fr_1.1fr]">
         <Reveal>
-          <div className="rounded-3xl border border-grey/60 bg-white p-8">
+          <div className="rounded-md border border-grey/60 bg-white p-8">
             <h2 className="font-display text-2xl text-charcoal">Send an Enquiry</h2>
             <div className="mt-6">
               <BookingForm />
@@ -45,7 +45,7 @@ export default function ContactPage() {
               href={whatsappLink("Hi Clinique Estique, I'd like to book an appointment.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 rounded-2xl border border-grey/60 bg-white p-5 hover:border-sage-deep"
+              className="flex items-center gap-3 rounded-md border border-grey/60 bg-white p-5 hover:border-sage-deep"
             >
               <IconChat className="h-5 w-5 text-sage-deep" />
               <div>
@@ -55,7 +55,7 @@ export default function ContactPage() {
             </a>
             <a
               href={business.phone.href}
-              className="flex items-center gap-3 rounded-2xl border border-grey/60 bg-white p-5 hover:border-sage-deep"
+              className="flex items-center gap-3 rounded-md border border-grey/60 bg-white p-5 hover:border-sage-deep"
             >
               <IconPhone className="h-5 w-5 text-sage-deep" />
               <div>
@@ -65,7 +65,7 @@ export default function ContactPage() {
             </a>
             <a
               href={`mailto:${business.email}`}
-              className="flex items-center gap-3 rounded-2xl border border-grey/60 bg-white p-5 hover:border-sage-deep"
+              className="flex items-center gap-3 rounded-md border border-grey/60 bg-white p-5 hover:border-sage-deep"
             >
               <IconMail className="h-5 w-5 text-sage-deep" />
               <div>
@@ -77,7 +77,7 @@ export default function ContactPage() {
               href={business.instagram.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 rounded-2xl border border-grey/60 bg-white p-5 hover:border-sage-deep"
+              className="flex items-center gap-3 rounded-md border border-grey/60 bg-white p-5 hover:border-sage-deep"
             >
               <IconInstagram className="h-5 w-5 text-sage-deep" />
               <div>
@@ -87,7 +87,7 @@ export default function ContactPage() {
             </a>
           </div>
 
-          <ul className="space-y-3 rounded-2xl border border-grey/60 bg-white p-6 font-body text-sm text-charcoal/75">
+          <ul className="space-y-3 rounded-md border border-grey/60 bg-white p-6 font-body text-sm text-charcoal/75">
             <li className="flex items-start gap-3">
               <IconPin className="mt-0.5 h-5 w-5 shrink-0 text-sage-deep" />
               {business.address.full}
@@ -104,12 +104,12 @@ export default function ContactPage() {
             href={business.map.directionsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-charcoal px-6 py-3 font-label text-xs uppercase tracking-widest2 text-charcoal hover:bg-charcoal hover:text-white"
+            className="inline-flex items-center gap-2 rounded-full border border-charcoal/45 px-6 py-3 font-label text-xs uppercase tracking-widest2 text-charcoal transition hover:border-charcoal hover:bg-charcoal hover:text-white"
           >
             <IconDirections className="h-4 w-4" /> Get Directions
           </a>
 
-          <div className="overflow-hidden rounded-3xl border border-grey/70">
+          <div className="overflow-hidden rounded-md border border-grey/70">
             <iframe
               title="Clinique Estique location map"
               src={business.map.embedSrc}

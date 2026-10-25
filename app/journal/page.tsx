@@ -29,7 +29,7 @@ export default function JournalPage() {
           <Reveal key={post.slug} delay={(i % 2) * 0.1}>
             <Link
               href={`/journal/${post.slug}`}
-              className="block h-full rounded-3xl border border-grey/60 bg-white p-7 transition hover:border-sage-deep"
+              className="block h-full rounded-md border border-grey/60 bg-white p-7 transition hover:border-sage-deep"
             >
               <p className="font-label text-xs uppercase tracking-wide text-sage-deep">
                 {post.category}

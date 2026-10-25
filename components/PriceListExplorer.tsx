@@ -73,21 +73,21 @@ export function PriceListExplorer({ initialTab = "ce" }: { initialTab?: Tab }) {
           href={tab === "ce" ? priceListSource.publicPath : mesibonSource.publicPath}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full border border-charcoal px-5 py-2.5 font-label text-xs uppercase tracking-widest2 text-charcoal hover:bg-charcoal hover:text-white"
+          className="rounded-full border border-charcoal/45 px-5 py-2.5 font-label text-xs uppercase tracking-widest2 text-charcoal transition hover:border-charcoal hover:bg-charcoal hover:text-white"
         >
           View {tab === "ce" ? "Treatment" : "Me Si Bon 2026"} Price List (PDF)
         </a>
         <a
           href={tab === "ce" ? priceListSource.publicPath : mesibonSource.publicPath}
           download
-          className="rounded-full border border-charcoal px-5 py-2.5 font-label text-xs uppercase tracking-widest2 text-charcoal hover:bg-charcoal hover:text-white"
+          className="rounded-full border border-charcoal/45 px-5 py-2.5 font-label text-xs uppercase tracking-widest2 text-charcoal transition hover:border-charcoal hover:bg-charcoal hover:text-white"
         >
           Download {tab === "ce" ? "Treatment" : "Me Si Bon 2026"} Price List (PDF)
         </a>
       </div>
 
       {tab === "ce" && (
-        <div className="mt-4 rounded-xl border border-grey/70 bg-silver/40 px-5 py-3 font-body text-xs text-charcoal/60">
+        <div className="mt-4 rounded-md border border-grey/70 bg-silver/40 px-5 py-3 font-body text-xs text-charcoal/60">
           This price list is dated 2024 in the original document. Please confirm current pricing
           with the clinic before booking — see our launch checklist for details.
         </div>
@@ -116,7 +116,7 @@ export function PriceListExplorer({ initialTab = "ce" }: { initialTab?: Tab }) {
                   {cat.name}
                 </h2>
                 <p className="mt-2 font-body text-sm text-charcoal/60">{cat.intro}</p>
-                <div className="mt-5 overflow-x-auto rounded-2xl border border-grey/70">
+                <div className="mt-5 overflow-x-auto rounded-md border border-grey/70">
                   <table className="w-full border-collapse text-left">
                     <thead>
                       <tr className="bg-silver/70">

@@ -32,7 +32,7 @@ export default function ResultsPage() {
         <Reveal>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {["microneedling", "ipl", "pmu"].map((type) => (
-              <div key={type} className="overflow-hidden rounded-3xl border border-dashed border-grey">
+              <div key={type} className="overflow-hidden rounded-md border border-dashed border-grey">
                 <SignatureVisual type={type as never} className="w-full opacity-60" />
                 <div className="p-5 text-center">
                   <p className="font-label text-xs uppercase tracking-wide text-charcoal/50">
@@ -44,7 +44,7 @@ export default function ResultsPage() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.15} className="mt-12 rounded-3xl border border-grey/70 bg-silver/50 p-8 text-center">
+        <Reveal delay={0.15} className="mt-12 rounded-md border border-grey/70 bg-silver/50 p-8 text-center">
           <p className="font-body text-sm text-charcoal/70">
             In the meantime, see recent, real client work and reviews directly on our channels.
           </p>
@@ -53,7 +53,7 @@ export default function ResultsPage() {
               href={business.instagram.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-charcoal px-6 py-3 font-label text-xs uppercase tracking-widest2 text-charcoal hover:bg-charcoal hover:text-white"
+              className="rounded-full border border-charcoal/45 px-6 py-3 font-label text-xs uppercase tracking-widest2 text-charcoal transition hover:border-charcoal hover:bg-charcoal hover:text-white"
             >
               View Instagram
             </a>
@@ -61,7 +61,7 @@ export default function ResultsPage() {
               href={business.googleRating.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-charcoal px-6 py-3 font-label text-xs uppercase tracking-widest2 text-charcoal hover:bg-charcoal hover:text-white"
+              className="rounded-full border border-charcoal/45 px-6 py-3 font-label text-xs uppercase tracking-widest2 text-charcoal transition hover:border-charcoal hover:bg-charcoal hover:text-white"
             >
               Read Google Reviews
             </a>

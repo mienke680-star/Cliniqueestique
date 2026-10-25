@@ -35,7 +35,7 @@ export default function TeamPage() {
       <section className="container-x grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {team.map((member, i) => (
           <Reveal key={member.name} delay={(i % 3) * 0.08}>
-            <div className="h-full rounded-3xl border border-grey/60 bg-white p-7">
+            <div className="h-full rounded-md border border-grey/60 bg-white p-7">
               <Initial name={member.name} />
               <h2 className="mt-5 font-display text-xl text-charcoal">{member.name}</h2>
               <p className="mt-1 font-label text-xs uppercase tracking-wide text-sage-deep">

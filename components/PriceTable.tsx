@@ -2,7 +2,7 @@ import type { PriceItem } from "@/data/ce-treatments";
 
 export function PriceTable({ items, caption }: { items: PriceItem[]; caption?: string }) {
   return (
-    <div className="overflow-x-auto rounded-2xl border border-grey/70">
+    <div className="overflow-x-auto rounded-md border border-grey/70">
       <table className="w-full border-collapse text-left">
         {caption && <caption className="sr-only">{caption}</caption>}
         <thead>

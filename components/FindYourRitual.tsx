@@ -59,7 +59,7 @@ export function FindYourRitual() {
       </Reveal>
 
       {chosen.length > 0 && (
-        <Reveal delay={0.15} className="mx-auto mt-12 max-w-3xl rounded-3xl border border-grey/70 bg-silver/50 p-8">
+        <Reveal delay={0.15} className="mx-auto mt-12 max-w-3xl rounded-md border border-grey/70 bg-silver/50 p-8">
           <p className="font-label text-xs uppercase tracking-widest2 text-charcoal">
             Suggested for you
           </p>
@@ -68,7 +68,7 @@ export function FindYourRitual() {
               <li key={cat.slug}>
                 <Link
                   href={`/treatments/${cat.slug}`}
-                  className="flex items-center justify-between rounded-xl bg-white px-4 py-3 font-body text-sm text-charcoal transition hover:bg-white/70"
+                  className="flex items-center justify-between rounded-md bg-white px-4 py-3 font-body text-sm text-charcoal transition hover:bg-white/70"
                 >
                   <span>{cat.name}</span>
                   <span className="text-xs text-sage-deep">{cat.startingFrom}</span>
@@ -79,7 +79,7 @@ export function FindYourRitual() {
               <li>
                 <Link
                   href="/me-si-bon"
-                  className="flex items-center justify-between rounded-xl bg-white px-4 py-3 font-body text-sm text-charcoal transition hover:bg-white/70"
+                  className="flex items-center justify-between rounded-md bg-white px-4 py-3 font-body text-sm text-charcoal transition hover:bg-white/70"
                 >
                   <span>Me Si Bon Essential Oils</span>
                 </Link>
@@ -90,7 +90,7 @@ export function FindYourRitual() {
             href={whatsappLink(ritualMessage(chosen.map((c) => c.label)))}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-flex items-center gap-2 rounded-full bg-charcoal px-6 py-3 font-label text-xs uppercase tracking-widest2 text-white transition hover:bg-sage-deep"
+            className="mt-6 inline-flex items-center gap-2 rounded-full bg-sage-deep px-6 py-3 font-label text-xs uppercase tracking-widest2 text-white transition hover:bg-charcoal"
           >
             <IconChat className="h-4 w-4" />
             Send my ritual to WhatsApp

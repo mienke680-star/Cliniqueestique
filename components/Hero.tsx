@@ -1,44 +1,24 @@
 import Image from "next/image";
-import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import { whatsappLink } from "@/data/business";
 import { IconArrowRight } from "./icons";
-import teamPhoto from "@/public/images/clinique-estique-team.jpg";
-
-// Hero-only typefaces: scoped to this component so the rest of the site keeps
-// its existing type system.
-const heroSerif = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  style: ["normal", "italic"],
-  variable: "--font-hero-serif",
-});
-
-const heroSans = DM_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-hero-sans",
-});
+import { BrandLogo, LogoMark } from "./Logo";
+import teamPhoto from "@/public/images/clinique-estique-team-studio.jpg";
 
 // The photograph is the authentic, unaltered team portrait. All of the
-// editorial styling around it (ivory field, light, monogram) is CSS layered
-// beside it, never painted over the people.
+// editorial styling around it (field, light, monogram) is CSS layered beside
+// it, never painted over the people. Type and colour come from the brand
+// system: display serif, Alegreya Sans SC labels, the official logo artwork.
 export function Hero() {
   return (
-    <section
-      aria-labelledby="hero-heading"
-      className={`ce-hero ${heroSerif.variable} ${heroSans.variable}`}
-    >
+    <section aria-labelledby="hero-heading" className="ce-hero">
       <div aria-hidden className="ce-hero__light" />
       <div aria-hidden className="ce-hero__monogram">
-        CE
+        <LogoMark className="w-full" />
       </div>
 
       <div className="ce-hero__content">
         <div className="ce-hero__brand ce-hero__reveal" style={{ "--d": "0.05s" } as React.CSSProperties}>
-          <p className="ce-hero__wordmark">
-            <span className="ce-hero__wordmark-top">Clinique</span>
-            <span className="ce-hero__wordmark-bottom">Estique</span>
-          </p>
+          <BrandLogo variant="wordmark" className="ce-hero__wordmark" />
           <p className="ce-hero__tagline">
             Skin <span aria-hidden>·</span> Beauty <span aria-hidden>·</span> Confidence
           </p>

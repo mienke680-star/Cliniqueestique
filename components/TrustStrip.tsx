@@ -28,7 +28,7 @@ const points = [
 export function TrustStrip({ className = "" }: { className?: string }) {
   return (
     <div
-      className={`grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-grey/70 bg-grey/70 shadow-[0_20px_60px_-30px_rgba(68,74,84,0.35)] md:grid-cols-4 ${className}`}
+      className={`grid grid-cols-2 gap-px overflow-hidden rounded-md border border-grey/70 bg-grey/70 shadow-[0_20px_60px_-30px_rgba(68,74,84,0.35)] md:grid-cols-4 ${className}`}
     >
       {points.map((p) => {
         const Icon = p.icon;

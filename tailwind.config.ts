@@ -7,21 +7,33 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      // Official Clinique Estique palette (Visual Brand Document, p.2).
+      // Values live as CSS variables in app/globals.css; the names below are
+      // the existing ones, so every component picks up the brand palette.
       colors: {
         sage: {
-          DEFAULT: "#A3BDB9",
-          deep: "#677877",
+          DEFAULT: "rgb(var(--ce-sage) / <alpha-value>)",
+          pale: "rgb(var(--ce-sage-pale) / <alpha-value>)",
+          deep: "rgb(var(--ce-sage-deep) / <alpha-value>)",
         },
-        charcoal: "#444A54",
-        silver: "#E9EBEB",
-        grey: "#D9D9D9",
-        ink: "#2B2F36",
+        seafoam: "rgb(var(--ce-seafoam) / <alpha-value>)",
+        charcoal: "rgb(var(--ce-charcoal) / <alpha-value>)",
+        silver: "rgb(var(--ce-offwhite) / <alpha-value>)",
+        grey: "rgb(var(--ce-softgrey) / <alpha-value>)",
+        ink: "rgb(var(--ce-charcoal) / <alpha-value>)",
+        paper: "rgb(var(--ce-paper) / <alpha-value>)",
       },
       fontFamily: {
         display: ["var(--font-display)", "serif"],
         script: ["var(--font-script)", "cursive"],
         label: ["var(--font-label)", "sans-serif"],
         body: ["var(--font-body)", "sans-serif"],
+      },
+      // Fluid display sizes for section headings (brand serif)
+      fontSize: {
+        "3xl": ["clamp(1.6rem, 1.25rem + 1.4vw, 1.875rem)", { lineHeight: "1.2" }],
+        "4xl": ["clamp(1.9rem, 1.35rem + 2.2vw, 2.25rem)", { lineHeight: "1.15" }],
+        "5xl": ["clamp(2.25rem, 1.2rem + 2.9vw, 3rem)", { lineHeight: "1.1" }],
       },
       maxWidth: {
         content: "1400px",

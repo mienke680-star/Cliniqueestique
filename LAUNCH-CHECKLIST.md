@@ -48,34 +48,36 @@ unreachable). Please confirm:
 - [ ] Roles/specialities listed for each are accurate
 - [ ] Whether "Beauty" is a placeholder name or an actual team member
 
-## 4. Photography — none was available this session
+## 4. Photography: partly supplied
 
-No screenshots, logo files, or photos were actually attached to this
-session (only the three PDFs came through), and Instagram/the website
-could not be reached. Per your brief, **no stock photos, AI-generated
-images, or fabricated staff/client photos were used** — instead, the site
-uses an original abstract motion/illustration system in the brand palette
-as a placeholder. Real photography is needed for:
+Supplied and in use, unaltered:
+- [x] Team photograph (homepage hero, `public/images/clinique-estique-team-studio.jpg`)
+- [x] Treatment photos for Facials, Microneedling, Waxing, IPL, Gel Nails,
+      Permanent Makeup, Massage, Grooming & Tinting (`public/images/treatments/`),
+      matched to the homepage cards in the order they were supplied.
 
-- [ ] Hero background image or muted video (homepage)
-- [ ] Team portraits (currently initials-in-a-circle placeholders)
-- [ ] Treatment category imagery (facials, microneedling, IPL, PMU, nails,
-      waxing, massage, Me Si Bon products)
-- [ ] Before-and-after transformation photos (Results page is intentionally
-      empty, with a note, rather than faked)
+Still needed (these cards show the brand illustration until then):
+- [ ] Hands & Feet, Plasma Plex, Hair & Makeup treatment photos
+- [ ] Lamelle Skincare and Me Si Bon product imagery
+- [ ] Grooming & Tinting: the supplied photo is a makeup-brush shot; confirm
+      it belongs there or swap it to Hair & Makeup and supply a brow/lash photo
+- [ ] Team portraits (team page still uses initials placeholders)
+- [ ] Before-and-after photos (Results page intentionally left without them)
 - [ ] Salon interior shots for About/homepage
 
-## 5. Logo file — resolved
+## 5. Logo & brand system: official files in use
 
-The owner supplied the real monogram as an image (`IMG_9271.jpeg`). It's
-now used directly across the site (`public/brand/ce-monogram.png`) — the
-only processing applied was cropping to the artwork's own edges and making
-the background transparent; no pixel of the mark itself was redrawn or
-recoloured. This replaced an earlier reconstructed placeholder.
+The official logo artwork from `CE_LOGO.pdf` (Wildchild Design) is used as
+vector SVG in `public/brand/logo/` (full lockup, stacked, horizontal,
+monogram, wordmark). Only the page background was removed and the canvas
+trimmed; colour follows the surrounding text so one file serves light and
+dark grounds. Used in the header, footer, intro, hero, favicon and social card.
 
-- [ ] If a true vector export (SVG/EPS/AI) exists, it can replace the
-      raster PNG for crisper scaling at very large sizes, but is not
-      required — the current asset is the authentic mark.
+- [ ] **Emilia Regular (heading font) is not installed.** It is a licensed
+      typeface and no font files were supplied, so headings use Bodoni Moda
+      as the closest freely licensed stand-in. Supply licensed web font files
+      (WOFF2) and they can be dropped in via `next/font/local`.
+      Alegreya Sans SC, Alegreya Sans and Pinyon Script are the exact brand fonts.
 
 ## 6. Reviews & testimonials
 

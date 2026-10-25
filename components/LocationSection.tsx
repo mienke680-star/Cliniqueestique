@@ -35,19 +35,19 @@ export function LocationSection() {
               href={whatsappLink("Hi Clinique Estique, I'd like to book an appointment.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-charcoal px-5 py-3 font-label text-xs uppercase tracking-widest2 text-white hover:bg-sage-deep"
+              className="inline-flex items-center gap-2 rounded-full bg-sage-deep px-5 py-3 font-label text-xs uppercase tracking-widest2 text-white transition hover:bg-charcoal"
             >
               <IconChat className="h-4 w-4" /> WhatsApp
             </a>
             <a
               href={business.phone.href}
-              className="inline-flex items-center gap-2 rounded-full border border-charcoal px-5 py-3 font-label text-xs uppercase tracking-widest2 text-charcoal hover:bg-charcoal hover:text-white"
+              className="inline-flex items-center gap-2 rounded-full border border-charcoal/45 px-5 py-3 font-label text-xs uppercase tracking-widest2 text-charcoal transition hover:border-charcoal hover:bg-charcoal hover:text-white"
             >
               <IconPhone className="h-4 w-4" /> Call
             </a>
             <a
               href={`mailto:${business.email}`}
-              className="inline-flex items-center gap-2 rounded-full border border-charcoal px-5 py-3 font-label text-xs uppercase tracking-widest2 text-charcoal hover:bg-charcoal hover:text-white"
+              className="inline-flex items-center gap-2 rounded-full border border-charcoal/45 px-5 py-3 font-label text-xs uppercase tracking-widest2 text-charcoal transition hover:border-charcoal hover:bg-charcoal hover:text-white"
             >
               <IconMail className="h-4 w-4" /> Email
             </a>
@@ -55,7 +55,7 @@ export function LocationSection() {
               href={business.map.directionsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-charcoal px-5 py-3 font-label text-xs uppercase tracking-widest2 text-charcoal hover:bg-charcoal hover:text-white"
+              className="inline-flex items-center gap-2 rounded-full border border-charcoal/45 px-5 py-3 font-label text-xs uppercase tracking-widest2 text-charcoal transition hover:border-charcoal hover:bg-charcoal hover:text-white"
             >
               <IconDirections className="h-4 w-4" /> Get Directions
             </a>
@@ -63,7 +63,7 @@ export function LocationSection() {
               href={business.instagram.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-charcoal px-5 py-3 font-label text-xs uppercase tracking-widest2 text-charcoal hover:bg-charcoal hover:text-white"
+              className="inline-flex items-center gap-2 rounded-full border border-charcoal/45 px-5 py-3 font-label text-xs uppercase tracking-widest2 text-charcoal transition hover:border-charcoal hover:bg-charcoal hover:text-white"
             >
               <IconInstagram className="h-4 w-4" /> Instagram
             </a>
@@ -77,7 +77,7 @@ export function LocationSection() {
           </Link>
         </Reveal>
 
-        <Reveal delay={0.15} className="overflow-hidden rounded-3xl border border-grey/70">
+        <Reveal delay={0.15} className="overflow-hidden rounded-md border border-grey/70">
           <iframe
             title="Clinique Estique location map"
             src={business.map.embedSrc}

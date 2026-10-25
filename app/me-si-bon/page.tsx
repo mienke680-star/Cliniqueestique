@@ -50,7 +50,7 @@ export default function MesiBonPage() {
         <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {mesibonWhyChoose.map((item, i) => (
             <Reveal key={item.title} delay={(i % 3) * 0.08}>
-              <div className="h-full rounded-2xl border border-grey/60 bg-white p-6">
+              <div className="h-full rounded-md border border-grey/60 bg-white p-6">
                 <p className="font-display text-lg text-charcoal">{item.title}</p>
                 <p className="mt-2 font-body text-sm leading-relaxed text-charcoal/65">{item.body}</p>
               </div>

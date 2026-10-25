@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ceTreatmentCategories } from "@/data/ce-treatments";
 import { whatsappLink } from "@/data/business";
-import { SignatureVisual } from "./SignatureVisual";
+import { TreatmentPhoto } from "./TreatmentPhoto";
 import { DragGallery } from "./DragGallery";
 import { TiltCard } from "./TiltCard";
 import { Reveal } from "./Reveal";
@@ -42,8 +42,8 @@ export function TreatmentExplorer() {
         <DragGallery className="mt-12">
           {cards.map((cat) => (
             <TiltCard key={cat.slug} className="w-[280px] shrink-0 snap-start sm:w-[320px]">
-              <div className="group flex h-full flex-col overflow-hidden rounded-3xl border border-grey/60 bg-white">
-                <SignatureVisual type={cat.signature} className="w-full" />
+              <div className="group flex h-full flex-col overflow-hidden rounded-md border border-grey/60 bg-white">
+                <TreatmentPhoto slug={cat.slug} fallback={cat.signature} className="w-full" />
                 <div className="flex flex-1 flex-col p-6">
                   <h3 className="font-display text-xl text-charcoal">{cat.name}</h3>
                   <p className="mt-2 line-clamp-3 font-body text-sm text-charcoal/65">{cat.intro}</p>

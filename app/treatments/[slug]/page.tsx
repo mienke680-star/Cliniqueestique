@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ceTreatmentCategories, findCeCategory, priceListSource } from "@/data/ce-treatments";
 import { whatsappLink } from "@/data/business";
-import { SignatureVisual } from "@/components/SignatureVisual";
+import { TreatmentPhoto } from "@/components/TreatmentPhoto";
 import { PriceTable } from "@/components/PriceTable";
 import { Reveal } from "@/components/Reveal";
 import { Button } from "@/components/Button";
@@ -72,7 +72,7 @@ export default function TreatmentDetailPage({ params }: { params: { slug: string
         </Reveal>
 
         <Reveal delay={0.15}>
-          <SignatureVisual type={cat.signature} className="w-full" />
+          <TreatmentPhoto slug={cat.slug} fallback={cat.signature} className="w-full" sizes="(min-width: 1024px) 40vw, 90vw" priority />
         </Reveal>
       </section>
 
@@ -107,7 +107,7 @@ export default function TreatmentDetailPage({ params }: { params: { slug: string
             <Link
               key={o.slug}
               href={`/treatments/${o.slug}`}
-              className="rounded-2xl border border-grey/60 bg-white p-5 transition hover:border-sage-deep"
+              className="rounded-md border border-grey/60 bg-white p-5 transition hover:border-sage-deep"
             >
               <p className="font-display text-lg text-charcoal">{o.name}</p>
               <p className="mt-1 font-label text-xs uppercase tracking-wide text-sage-deep">

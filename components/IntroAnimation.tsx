@@ -2,8 +2,8 @@
 
 import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { BrandLogo, LogoMark } from "./Logo";
 
-const MONOGRAM_SRC = "/brand/ce-monogram.png";
 
 const EASE = [0.16, 0.8, 0.3, 1] as const;
 const AUTO_ADVANCE_MS = 4200;
@@ -76,7 +76,7 @@ export function IntroAnimation({ onDone }: { onDone: () => void }) {
 
   return (
     <motion.div
-      className="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-white via-[#F3F6F5] to-silver"
+      className="fixed inset-0 z-[100] flex flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-paper via-silver to-sage-pale/60"
       initial={{ opacity: 1 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 0.7, ease: EASE } }}
@@ -103,17 +103,12 @@ export function IntroAnimation({ onDone }: { onDone: () => void }) {
         <div className="relative h-24 md:h-32">
           <motion.div
             className="h-24 overflow-hidden md:h-32"
-            style={{ aspectRatio: 560 / 333 }}
+            style={{ aspectRatio: 216.08 / 129.85 }}
             initial={{ clipPath: "inset(0 100% 0 0)" }}
             animate={{ clipPath: "inset(0 0% 0 0)" }}
             transition={{ duration: 1.6, ease: EASE, delay: 0.2 }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={MONOGRAM_SRC}
-              alt="Clinique Estique monogram"
-              className="h-full w-full object-contain"
-            />
+            <LogoMark className="h-full w-full text-charcoal" />
           </motion.div>
           <motion.div
             aria-hidden
@@ -130,7 +125,7 @@ export function IntroAnimation({ onDone }: { onDone: () => void }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: EASE, delay: 2.15 }}
         >
-          <p className="font-display text-3xl text-charcoal md:text-4xl">Clinique Estique</p>
+          <BrandLogo variant="wordmark" className="h-7 text-charcoal md:h-9" />
           <p className="mt-2 font-label text-xs uppercase tracking-widest2 text-sage-deep md:text-sm">
             Specialised Beauty Clinic
           </p>
@@ -169,7 +164,7 @@ export function ReducedMotionIntro({ onDone }: { onDone: () => void }) {
 
   return (
     <motion.div
-      className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-white"
+      className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-paper"
       initial={{ opacity: 1 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -181,9 +176,8 @@ export function ReducedMotionIntro({ onDone }: { onDone: () => void }) {
       >
         Skip intro
       </button>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={MONOGRAM_SRC} alt="Clinique Estique monogram" className="h-20 w-auto object-contain" />
-      <p className="mt-4 font-display text-2xl text-charcoal">Clinique Estique</p>
+      <LogoMark className="h-20 text-charcoal" />
+      <BrandLogo variant="wordmark" className="mt-5 h-7 text-charcoal" />
       <p className="mt-1 font-label text-xs uppercase tracking-widest2 text-sage-deep">
         Specialised Beauty Clinic
       </p>

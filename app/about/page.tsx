@@ -49,7 +49,7 @@ export default function AboutPage() {
       <section className="container-x grid gap-6 md:grid-cols-3">
         {timeline.map((t, i) => (
           <Reveal key={t.title} delay={i * 0.1}>
-            <div className="h-full rounded-3xl border border-grey/60 bg-white p-7">
+            <div className="h-full rounded-md border border-grey/60 bg-white p-7">
               <p className="font-label text-xs uppercase tracking-widest2 text-sage-deep">{t.year}</p>
               <h2 className="mt-3 font-display text-xl text-charcoal">{t.title}</h2>
               <p className="mt-3 font-body text-sm leading-relaxed text-charcoal/70">{t.body}</p>
