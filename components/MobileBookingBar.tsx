@@ -25,15 +25,15 @@ export function MobileBookingBar() {
   return (
     <nav
       aria-label="Quick actions"
-      className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-4 border-t border-grey bg-white/95 backdrop-blur md:hidden"
+      className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-4 border-t border-[#E8DDD0] bg-[#FBF8F3]/95 shadow-[0_-10px_30px_-20px_rgba(91,66,40,0.35)] backdrop-blur md:hidden"
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
       {items.map((item) => {
         const Icon = item.icon;
         const content = (
           <>
-            <Icon className="h-5 w-5 text-charcoal" />
-            <span className="mt-0.5 font-label text-[10px] uppercase tracking-wide text-charcoal">
+            <Icon className="h-[1.2rem] w-[1.2rem] text-[#8B6B4A]" />
+            <span className="mt-0.5 font-label text-[10.5px] uppercase tracking-[0.14em] text-[#252321]">
               {item.label}
             </span>
           </>
@@ -44,7 +44,7 @@ export function MobileBookingBar() {
             href={item.href}
             target={item.href.startsWith("http") ? "_blank" : undefined}
             rel="noopener noreferrer"
-            className="flex flex-col items-center justify-center gap-0.5 py-2.5 active:bg-silver"
+            className="flex min-h-[3.6rem] flex-col items-center justify-center gap-0.5 py-2 transition-colors active:bg-[#F1E9DD]"
           >
             {content}
           </a>
@@ -52,7 +52,7 @@ export function MobileBookingBar() {
           <Link
             key={item.label}
             href={item.href}
-            className="flex flex-col items-center justify-center gap-0.5 py-2.5 active:bg-silver"
+            className="flex min-h-[3.6rem] flex-col items-center justify-center gap-0.5 py-2 transition-colors active:bg-[#F1E9DD]"
           >
             {content}
           </Link>

@@ -390,49 +390,143 @@ select:focus-visible {
   }
 }
 
+/* Two sentences, two lines from tablet up; on phones they share one
+   centred line and only wrap between sentences. */
+.ce-hero__support span {
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .ce-hero__support span {
+    display: block;
+  }
+}
+
+/* Phones (320-767px): a composition of its own rather than a reduced
+   desktop. The CE logo in the header carries the brand, so the hero opens
+   straight on the headline, centred over the centred group portrait. */
 @media (max-width: 767px) {
   .ce-hero {
-    /* clear the fixed mobile quick-action bar */
-    min-height: calc(100svh - 5rem - 3.75rem);
+    --hero-pad-x: clamp(1.25rem, 6.4vw, 2rem);
+    /* fill the screen between the 4rem header and the quick-action bar */
+    min-height: calc(100svh - 4rem - 3.6rem - env(safe-area-inset-bottom));
+    text-align: center;
+    background:
+      radial-gradient(90% 55% at 50% 0%, #fdfbf7 0%, transparent 70%),
+      linear-gradient(180deg, var(--hero-ivory) 0%, #f7eee1 100%);
   }
+
+  .ce-hero__light {
+    opacity: 0.7;
+  }
+
+  .ce-hero__monogram {
+    display: none;
+  }
+
+  .ce-hero__brand {
+    display: none;
+  }
+
   .ce-hero__content {
-    padding-top: clamp(1.4rem, 4svh, 2.25rem);
+    flex: 1 0 auto;
+    align-items: center;
+    padding: clamp(1.5rem, 4svh, 2.25rem) var(--hero-pad-x) clamp(0.5rem, 1.5svh, 1rem);
   }
-  .ce-hero__wordmark-top {
-    font-size: clamp(1.65rem, 7.6vw, 2.6rem);
+
+  /* Spare height on taller phones goes mostly above the headline (2:1),
+     so the copy stays close to the team instead of floating mid-screen. */
+  .ce-hero__content::before,
+  .ce-hero__content::after {
+    content: "";
+    flex: 2 1 0;
+    max-height: 4.5rem;
   }
-  .ce-hero__wordmark-bottom {
-    font-size: clamp(0.95rem, 4.1vw, 1.4rem);
+  .ce-hero__content::after {
+    flex-grow: 1;
+    max-height: 2rem;
   }
-  .ce-hero__tagline {
-    margin-top: 1.1em;
-    font-size: clamp(0.66rem, 2.9vw, 0.74rem);
-    letter-spacing: 0.24em;
-    margin-right: -0.24em;
+
+  /* fine champagne hairline as the opening ornament */
+  .ce-hero__heading::before {
+    content: "";
+    align-self: center;
+    width: 2.25rem;
+    height: 1px;
+    margin-bottom: clamp(0.9rem, 2.4svh, 1.35rem);
+    background: var(--hero-taupe);
   }
-  .ce-hero__rule {
-    width: 3.5rem;
-    margin-top: clamp(0.8rem, 2svh, 1.1rem);
-  }
+
   .ce-hero__heading {
-    margin-top: clamp(0.8rem, 2.2svh, 1.2rem);
-    font-size: clamp(2.05rem, 9.2vw, 2.9rem);
+    align-items: center;
+    margin-top: 0;
+    font-size: clamp(2.15rem, 10.2vw, 2.7rem);
+    font-weight: 500;
+    line-height: 1.04;
+    letter-spacing: -0.01em;
   }
+
+  .ce-hero__accent {
+    font-size: 1.36em;
+    margin-left: 0;
+    margin-top: -0.06em;
+  }
+
   .ce-hero__support {
-    margin-top: clamp(0.6rem, 1.8svh, 0.9rem);
-    font-size: clamp(0.66rem, 2.9vw, 0.8rem);
-    line-height: 1.65;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 0.55em;
+    margin-top: clamp(0.65rem, 1.8svh, 1rem);
+    font-size: clamp(0.64rem, 2.85vw, 0.74rem);
+    letter-spacing: clamp(0.14em, 0.9vw, 0.22em);
+    line-height: 1.7;
+    color: rgba(37, 35, 33, 0.78);
   }
+
   .ce-hero__cta {
-    margin-top: clamp(1rem, 2.6svh, 1.4rem);
-    padding: 0.95rem 1.5rem 0.95rem 1.7rem;
-    font-size: clamp(0.68rem, 3vw, 0.76rem);
-    letter-spacing: 0.17em;
+    gap: 0.75rem;
+    margin-top: clamp(1.1rem, 3svh, 1.6rem);
+    min-height: 3.1rem;
+    padding: 0.9rem 1.6rem 0.9rem 1.8rem;
+    font-size: clamp(0.66rem, 2.9vw, 0.74rem);
+    letter-spacing: 0.18em;
+    box-shadow: 0 12px 26px -16px rgba(91, 66, 40, 0.6);
   }
+
+  .ce-hero__cta-arrow {
+    width: 1.05rem;
+    height: 1.05rem;
+  }
+
+  /* The full, uncropped portrait. Widened only by its empty backdrop so the
+     group spans the screen edge to edge; the top dissolves into the ivory. */
   .ce-hero__photo {
-    /* trim the frame just below the waist so the faces rise into view */
-    width: 114%;
-    margin-left: -7.5%;
+    flex: 0 0 auto;
+    width: 118%;
+    margin: auto 0 0 -10%;
+    aspect-ratio: 1448 / 1086;
+    /* Dissolve the backdrop's top edge into the ivory, but keep the
+       centre (the tallest team member's head) fully opaque. */
+    -webkit-mask-image:
+      radial-gradient(11% 19.5% at 53.5% 21%, #000 85%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, #000 15%);
+    mask-image:
+      radial-gradient(11% 19.5% at 53.5% 21%, #000 85%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, #000 15%);
+    -webkit-mask-composite: source-over;
+    mask-composite: add;
+  }
+
+  .ce-hero__img {
+    object-position: center bottom;
+  }
+}
+
+/* Short phones (iPhone SE, small Androids): trim the frame below the waist
+   so the faces stay above the quick-action bar. */
+@media (max-width: 767px) and (max-height: 700px) {
+  .ce-hero__photo {
     aspect-ratio: 1448 / 960;
   }
   .ce-hero__img {

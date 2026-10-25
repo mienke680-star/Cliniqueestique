@@ -14,10 +14,10 @@ export function SiteHeader() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-30 border-b border-grey/70 bg-white/95 backdrop-blur">
-      <div className="container-x flex h-20 items-center justify-between">
+    <header className="sticky top-0 z-30 border-b border-[#E8DDD0]/80 bg-white/95 backdrop-blur md:border-grey/70">
+      <div className="container-x flex h-16 items-center justify-between md:h-20">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <LogoMark className="h-9 w-auto md:h-10" />
+          <LogoMark className="h-8 w-auto md:h-10" />
           <span className="hidden flex-col whitespace-nowrap leading-tight sm:flex">
             <span className="font-display text-lg text-charcoal md:text-xl">Clinique Estique</span>
             <span className="font-label text-[10px] uppercase tracking-widest2 text-sage-deep">
@@ -59,9 +59,9 @@ export function SiteHeader() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="rounded-full border border-grey p-2.5 text-charcoal xl:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-[#E8DDD0] text-charcoal transition hover:border-[#A88660] md:h-auto md:w-auto md:border-grey md:p-2.5 xl:hidden"
           >
-            {open ? <IconClose /> : <IconMenu />}
+            {open ? <IconClose className="h-5 w-5 md:h-6 md:w-6" /> : <IconMenu className="h-5 w-5 md:h-6 md:w-6" />}
           </button>
         </div>
       </div>

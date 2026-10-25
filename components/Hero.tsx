@@ -58,9 +58,7 @@ export function Hero() {
         </h1>
 
         <p className="ce-hero__support ce-hero__reveal" style={{ "--d": "0.58s" } as React.CSSProperties}>
-          Expert treatments.
-          <br />
-          Real results.
+          <span>Expert treatments.</span> <span>Real results.</span>
         </p>
 
         <div className="ce-hero__reveal" style={{ "--d": "0.7s" } as React.CSSProperties}>
