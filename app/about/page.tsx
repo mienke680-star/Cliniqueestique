@@ -18,8 +18,8 @@ const timeline = [
   },
   {
     year: "Growing",
-    title: "A home at Midpark",
-    body: "As the client base grew, the business moved into its own space at Midpark, allowing the treatment menu — and the team — to expand.",
+    title: "A home in Middelburg",
+    body: "As the client base grew, the business moved into its own space in Middelburg, allowing the treatment menu — and the team — to expand.",
   },
   {
     year: "Today",

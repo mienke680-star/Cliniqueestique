@@ -20,7 +20,7 @@ export function BrandStory() {
             Clinique Estique began modestly — founder Yvette Botha started out renting a single
             nail station inside an established hair salon, building her client base one careful
             appointment at a time. As word spread and the chair list grew, the business found a
-            home of its own at Midpark before expanding further into the specialised beauty
+            home of its own in Middelburg before expanding further into the specialised beauty
             clinic it is today.
           </p>
           <p>
