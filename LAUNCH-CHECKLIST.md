@@ -53,14 +53,11 @@ unreachable). Please confirm:
 Supplied and in use, unaltered:
 - [x] Team photograph (homepage hero, `public/images/clinique-estique-team-studio.jpg`)
 - [x] Treatment photos for Facials, Microneedling, Waxing, IPL, Gel Nails,
-      Permanent Makeup, Massage, Grooming & Tinting (`public/images/treatments/`),
-      matched to the homepage cards in the order they were supplied.
+      Permanent Makeup, Massage, Hair & Makeup (`public/images/treatments/`).
 
 Still needed (these cards show the brand illustration until then):
-- [ ] Hands & Feet, Plasma Plex, Hair & Makeup treatment photos
+- [ ] Hands & Feet, Plasma Plex, Grooming & Tinting treatment photos
 - [ ] Lamelle Skincare and Me Si Bon product imagery
-- [ ] Grooming & Tinting: the supplied photo is a makeup-brush shot; confirm
-      it belongs there or swap it to Hair & Makeup and supply a brow/lash photo
 - [ ] Team portraits (team page still uses initials placeholders)
 - [ ] Before-and-after photos (Results page intentionally left without them)
 - [ ] Salon interior shots for About/homepage

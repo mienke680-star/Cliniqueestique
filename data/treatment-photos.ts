@@ -6,7 +6,7 @@ import ipl from "@/public/images/treatments/ipl-treatments.jpg";
 import nails from "@/public/images/treatments/nails.jpg";
 import pmu from "@/public/images/treatments/permanent-makeup.jpg";
 import massage from "@/public/images/treatments/massage-therapy.jpg";
-import grooming from "@/public/images/treatments/grooming-and-tinting.jpg";
+import hairMakeup from "@/public/images/treatments/hair-and-makeup.jpg";
 
 export type TreatmentPhoto = {
   src: StaticImageData;
@@ -15,8 +15,9 @@ export type TreatmentPhoto = {
   position: string;
 };
 
-// Owner-supplied photographs, in the order they were supplied, matched to
-// the homepage treatment cards in their display order. Files are the
+// Owner-supplied photographs, matched to their treatment families (placed
+// in the order supplied; the makeup photo moved to Hair & Makeup at the
+// owner's request). Files are the
 // originals (JPEGs copied as-is; PNGs saved as high-quality JPEG) with no
 // retouching, recolouring or cropping baked in.
 export const treatmentPhotos: Record<string, TreatmentPhoto> = {
@@ -55,9 +56,9 @@ export const treatmentPhotos: Record<string, TreatmentPhoto> = {
     alt: "Therapist pouring massage oil into one hand before a back massage",
     position: "50% 50%",
   },
-  "grooming-and-tinting": {
-    src: grooming,
-    alt: "Makeup brush held over a client's eye, showing groomed brows and lashes",
+  "hair-and-makeup": {
+    src: hairMakeup,
+    alt: "Makeup brush held over a client's eye, showing a finished makeup look",
     position: "50% 50%",
   },
 };
