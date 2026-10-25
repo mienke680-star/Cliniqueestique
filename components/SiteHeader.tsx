@@ -18,7 +18,7 @@ export function SiteHeader() {
       <div className="container-x flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <LogoMark className="h-9 w-auto md:h-10" />
-          <span className="hidden flex-col leading-tight sm:flex">
+          <span className="hidden flex-col whitespace-nowrap leading-tight sm:flex">
             <span className="font-display text-lg text-charcoal md:text-xl">Clinique Estique</span>
             <span className="font-label text-[10px] uppercase tracking-widest2 text-sage-deep">
               Specialised Beauty Clinic
@@ -26,14 +26,14 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-5 xl:flex 2xl:gap-7">
           {primaryNav.map((item) => {
             const active = pathname === item.href;
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`font-label text-[13px] uppercase tracking-wide transition hover:text-charcoal ${
+                className={`whitespace-nowrap font-label text-[13px] uppercase tracking-wide transition hover:text-charcoal ${
                   active ? "text-charcoal" : "text-charcoal/60"
                 }`}
               >
@@ -49,7 +49,7 @@ export function SiteHeader() {
               href={whatsappLink("Hi Clinique Estique, I'd like to book an appointment.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-charcoal px-5 py-2.5 font-label text-xs uppercase tracking-widest2 text-white transition hover:bg-sage-deep"
+              className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-charcoal px-5 py-2.5 font-label text-xs uppercase tracking-widest2 text-white transition hover:bg-sage-deep"
             >
               <IconChat className="h-4 w-4" />
               Book on WhatsApp
@@ -59,7 +59,7 @@ export function SiteHeader() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="rounded-full border border-grey p-2.5 text-charcoal lg:hidden"
+            className="rounded-full border border-grey p-2.5 text-charcoal xl:hidden"
           >
             {open ? <IconClose /> : <IconMenu />}
           </button>
@@ -67,7 +67,7 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <div className="border-t border-grey/70 bg-white lg:hidden">
+        <div className="border-t border-grey/70 bg-white xl:hidden">
           <nav aria-label="Mobile" className="container-x flex flex-col gap-1 py-4">
             {primaryNav.map((item) => (
               <Link
@@ -83,7 +83,7 @@ export function SiteHeader() {
               href={whatsappLink("Hi Clinique Estique, I'd like to book an appointment.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-charcoal px-5 py-3 font-label text-xs uppercase tracking-widest2 text-white"
+              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-charcoal px-5 py-3 font-label text-xs uppercase tracking-widest2 text-white md:hidden"
             >
               <IconChat className="h-4 w-4" />
               Book on WhatsApp
