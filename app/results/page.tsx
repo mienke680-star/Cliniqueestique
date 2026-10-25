@@ -11,7 +11,7 @@ import decolletage from "@/public/images/results/decolletage.jpg";
 export const metadata: Metadata = {
   title: "Results & Transformations",
   description:
-    "Before-and-after results from Clinique Estique in Middelburg: brows, lashes and pigmentation.",
+    "Real before-and-after results from Clinique Estique clients in Middelburg: brows, lashes and pigmentation.",
   alternates: { canonical: "/results" },
 };
 
@@ -95,8 +95,8 @@ export default function ResultsPage() {
             Real results, honestly shown.
           </h1>
           <p className="mt-5 max-w-[60ch] font-body text-base leading-relaxed text-charcoal/75">
-            Before and after, side by side. Every skin responds differently, so every plan starts
-            with a consultation.
+            Real results from our own clients at Clinique Estique, shown before and after. Every
+            skin responds differently, so every plan starts with a consultation.
           </p>
         </Reveal>
       </section>

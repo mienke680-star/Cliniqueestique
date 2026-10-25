@@ -65,8 +65,8 @@ Still needed (these cards show the brand illustration until then):
 - [ ] Confirm each team member's role wording, and whether "Beauty (Salon Support)"
       is still on the team (no portrait was supplied, so she is listed in text only)
 - [x] Before-and-after photos (lashes, décolleté pigmentation, brows) on the Results page
-- [ ] Confirm the results photos are Clinique Estique clients shown with consent, and
-      which treatment each one shows (captions currently name the area only)
+- [x] Results photos confirmed by the owner as real results from their own clients
+- [ ] Which treatment each result shows (captions currently name the area only)
 - [ ] Salon interior shots for About/homepage
 
 ## 5. Logo & brand system: official files in use
