@@ -10,11 +10,16 @@ could **not** be verified and needs a human decision before launch.
 
 ## 1. Pricing — confirm currency
 
-- [ ] **Clinique Estique treatment prices are dated 2024** in the supplied
-      PDF (`Copy of CE PRICELIST.pdf`, titled "PRICE LIST 2024"). The site
-      displays this date honestly and does not claim it's current. **Please
-      confirm whether these prices are still valid**, or supply updated
-      pricing.
+- [x] Clinique Estique treatment prices updated to the official **2026 CE Price
+      List** (all 116 treatments, checked line by line; PDF downloadable from the
+      Price List page).
+- [ ] **Massage Therapy is not on the 2026 price list.** Its 2024 prices were
+      removed; the category now says "Price on enquiry". Confirm whether massage
+      is still offered (remove the category if not, or supply prices).
+- [ ] Wording read from the 2026 PDF, please confirm: "Derma Planning" is shown
+      as "Dermaplaning"; the two eyeliner 3-month touch-ups are labelled
+      "(upper & lower lid)" and "(upper lid only)" by their position under each
+      eyeliner treatment in the PDF.
 - [ ] Me Si Bon prices are from `Me Si bon Pricelist nuwe 2026.pdf` — please
       confirm these are the current, correct prices.
 
@@ -127,7 +132,7 @@ existing site.
 
 ## What was fully verified and used as-is
 
-- Every treatment, add-on, and price in `Copy of CE PRICELIST.pdf` (2024) —
+- Every treatment, add-on, and price in `2026 CE Price List (1).pdf` -
   see `data/ce-treatments.ts`.
 - Every product, size, and price in `Me Si bon Pricelist nuwe 2026.pdf` —
   see `data/mesibon-products.ts`.

@@ -18,7 +18,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   if (!cat) return {};
   return {
     title: `${cat.name} in Middelburg`,
-    description: `${cat.intro} Pricing ${cat.startingFrom.toLowerCase()} at Clinique Estique, Middelburg, Mpumalanga.`,
+    description: `${cat.intro} ${cat.items.length ? `Pricing ${cat.startingFrom.toLowerCase()}` : "Price on enquiry"} at Clinique Estique, Middelburg, Mpumalanga.`,
     alternates: { canonical: `/treatments/${cat.slug}` },
   };
 }
@@ -85,11 +85,10 @@ export default function TreatmentDetailPage({ params }: { params: { slug: string
             </span>
           </div>
           <div className="mt-6">
-            <PriceTable items={cat.items} caption={`${cat.name} pricing`} />
+            <PriceTable items={cat.items} caption={`${cat.name} pricing`} note={cat.priceNote} />
           </div>
           <p className="mt-4 font-body text-xs text-charcoal/50">
-            Prices from {priceListSource.title}. Confirm current pricing with the clinic before
-            booking — see our{" "}
+            Prices from the {priceListSource.title}. See our{" "}
             <Link href="/price-list" className="underline">
               full price list
             </Link>

@@ -96,7 +96,7 @@ export function SiteFooter() {
           <Link href="/cookies" className="hover:text-white">
             Cookie Notice
           </Link>
-          <span>Prices verified against the supplied 2024 &amp; 2026 price lists.</span>
+          <span>Prices from the official 2026 price lists.</span>
         </div>
       </div>
     </footer>

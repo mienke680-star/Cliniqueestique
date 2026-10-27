@@ -73,25 +73,21 @@ export function PriceListExplorer({ initialTab = "ce" }: { initialTab?: Tab }) {
           href={tab === "ce" ? priceListSource.publicPath : mesibonSource.publicPath}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full border border-charcoal/45 px-5 py-2.5 font-label text-xs uppercase tracking-widest2 text-charcoal transition hover:border-charcoal hover:bg-charcoal hover:text-white"
+          aria-label={`View the ${tab === "ce" ? "treatment" : "Me Si Bon"} 2026 price list (PDF, opens in a new tab)`}
+          className="whitespace-nowrap rounded-full border border-charcoal/45 px-5 py-2.5 font-label text-xs uppercase tracking-widest2 text-charcoal transition hover:border-charcoal hover:bg-charcoal hover:text-white"
         >
-          View {tab === "ce" ? "Treatment" : "Me Si Bon 2026"} Price List (PDF)
+          View 2026 PDF
         </a>
         <a
           href={tab === "ce" ? priceListSource.publicPath : mesibonSource.publicPath}
           download
-          className="rounded-full border border-charcoal/45 px-5 py-2.5 font-label text-xs uppercase tracking-widest2 text-charcoal transition hover:border-charcoal hover:bg-charcoal hover:text-white"
+          aria-label={`Download the ${tab === "ce" ? "treatment" : "Me Si Bon"} 2026 price list (PDF)`}
+          className="whitespace-nowrap rounded-full border border-charcoal/45 px-5 py-2.5 font-label text-xs uppercase tracking-widest2 text-charcoal transition hover:border-charcoal hover:bg-charcoal hover:text-white"
         >
-          Download {tab === "ce" ? "Treatment" : "Me Si Bon 2026"} Price List (PDF)
+          Download PDF
         </a>
       </div>
 
-      {tab === "ce" && (
-        <div className="mt-4 rounded-md border border-grey/70 bg-silver/40 px-5 py-3 font-body text-xs text-charcoal/60">
-          This price list is dated 2024 in the original document. Please confirm current pricing
-          with the clinic before booking — see our launch checklist for details.
-        </div>
-      )}
 
       <div className="mt-10 space-y-14">
         {tab === "ce"
@@ -106,7 +102,7 @@ export function PriceListExplorer({ initialTab = "ce" }: { initialTab?: Tab }) {
                   </span>
                 </div>
                 <div className="mt-5">
-                  <PriceTable items={cat.items} caption={`${cat.name} pricing`} />
+                  <PriceTable items={cat.items} caption={`${cat.name} pricing`} note={cat.priceNote} />
                 </div>
               </section>
             ))
